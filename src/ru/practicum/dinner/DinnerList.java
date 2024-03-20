@@ -9,25 +9,19 @@ public class DinnerList {
     }
 
     void dinnerListMethod (String typeOfDish, String nameOfDish) {
+        ArrayList<String> typeValues;
         if (dinnerList.containsKey(typeOfDish)) {
-            ArrayList<String> typeValues = dinnerList.get(typeOfDish);
-            typeValues.add(nameOfDish);
-            dinnerList.put(typeOfDish, typeValues);
+            typeValues = dinnerList.get(typeOfDish);
         }
         else {
-            ArrayList<String> typeValues = new ArrayList<>();
-            typeValues.add(nameOfDish);
-            dinnerList.put(typeOfDish, typeValues);
+            typeValues = new ArrayList<>();
         }
+        typeValues.add(nameOfDish);
+        dinnerList.put(typeOfDish, typeValues);
     }
 
     boolean dinnerListKey (String nextItem) {
-        if (dinnerList.containsKey(nextItem)) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return dinnerList.containsKey(nextItem);
     }
 }
 
