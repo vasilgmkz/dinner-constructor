@@ -10,7 +10,7 @@ public class DinnerList {
 
     void dinnerListMethod (String typeOfDish, String nameOfDish) {
         ArrayList<String> typeValues;
-        if (dinnerList.containsKey(typeOfDish)) {
+        if (dinnerList.get(typeOfDish) != null) {
             typeValues = dinnerList.get(typeOfDish);
         }
         else {
@@ -21,7 +21,7 @@ public class DinnerList {
     }
 
     boolean dinnerListKey (String nextItem) {
-        return dinnerList.containsKey(nextItem);
+        return dinnerList.get(nextItem) != null;
     }
 }
 
